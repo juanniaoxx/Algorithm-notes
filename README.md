@@ -1,6 +1,6 @@
 # Weary Bird's Algorithm Notes
 
-[Weary Bird's Algorithm Notes](https://github.com/juanniaoxx/Algorithm-notes)
+[Weary Bird's Algorithm Notes](https://juanniaoxx.github.io/Algorithm-notes/)
 学习算法的笔记,
 在硬计算部分
 主要包括Acwing基础课,提高课,leetcode究极班内容以及左程云算法课
