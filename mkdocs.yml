@@ -67,36 +67,11 @@ repo_name: Weary Bird # 右上角的名字
 # [Navigtion]
 nav:
   - 标签: tag.md
-
-  # 硬计类算法
-  - Algorithm:
-      - Beginner:
-        - 数据结构:
-          - Question Of LinkList: Algorithm/Beginner/ListQuestions.md
-          - DateStructureDesign: Algorithm/Beginner/DateStructureDesign.md
-          - Binary Tree: Algorithm/Beginner/Binary Tree.md
-          - Trie Tree: Algorithm/Beginner/Trie Tree.md
-          - Monotonic Stack: Algorithm/Beginner/Monotonic Stack.md
-          - Monotonic Queen: Algorithm/Beginner/Monotonic Queen.md
-          - Disjoined Set: Algorithm/Beginner/Disjoined Set.md
-        - 算法:
-          - Difference: Algorithm/Beginner/Difference.md
-          - Prefix_Sum: Algorithm/Beginner/Prefix_Sum.md
-          - N Queen Question: Algorithm/Beginner/N Queen Question.md
-          - Recursion: Algorithm/Beginner/Recursion.md
-          - Two Pointers: Algorithm/Beginner/Two Pointers Technique.md
-          - Sliding Window: Algorithm/Beginner/Sliding Window.md
-          - Flood Fill: Algorithm/Beginner/Flood Fill.md
-        - 杂项:
-          - GCD and Congruence: Algorithm/Beginner/GCD and Congruence.md
-          - Infer by data: Algorithm/Beginner/Infer by data.md
-          - Logarithmic meter: Algorithm/Beginner/Logarithmic meter.md
-      - Advanced: []
-      - Intermediate: []
-      # 软计算类算法 
-      - 手推机器学习算法: []
-      - 手搓深度学习算法: []
-      - 手搓强化学习算法: []
+  - 剑指Offer: 
+      - 剑指Offer原版:
+          - 面试的流程: 剑指Offer/剑指Offer原版/Chapter 1.md
+          - 面试所需要的基本知识-数组: 剑指Offer/剑指Offer原版/Chapter 2_1 数组.md
+          - 面试所需要的基本知识-字符串: 剑指Offer/剑指Offer原版/Chapter 2_2 字符串.md
 
 copyright: Copyright &copy; 2025~2026 Weary Bird # 左下角的版权声明
 

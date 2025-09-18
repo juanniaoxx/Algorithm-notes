@@ -2,10 +2,15 @@
     "cSpell.words": [
         "Colab",
         "Cramer",
+        "dequeen",
         "leftbrace",
         "numer",
         "rightbrace",
         "xaxis"
     ],
-    "html.autoClosingTags": false
+    "html.autoClosingTags": false,
+    "files.associations": {
+        "vector": "cpp",
+        "__split_buffer": "cpp"
+    }
 }
