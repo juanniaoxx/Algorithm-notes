@@ -72,7 +72,13 @@ nav:
           - 面试的流程: 剑指Offer/剑指Offer原版/Chapter 1.md
           - 面试所需要的基本知识-数组: 剑指Offer/剑指Offer原版/Chapter 2_1 数组.md
           - 面试所需要的基本知识-字符串: 剑指Offer/剑指Offer原版/Chapter 2_2 字符串.md
-
+  - Leetcode:
+      - Leetcode面试150题:
+          - Leetcode/Leetcode面试经典150题/数组.md
+      - Hot 100题: []
+      - Leetcode全刷: []
+  - CodeWare: []
+  - HackerRank: []
 copyright: Copyright &copy; 2025~2026 Weary Bird # 左下角的版权声明
 
 extra:
