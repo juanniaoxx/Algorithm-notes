@@ -10,7 +10,7 @@
         "books": 1,
         "link": "/languages/cpp/introducing/",
         "stars": 5,
-        "img": "/theme/images/10.png"
+        "img": "theme/images/10.png"
     },
     {
         "cate": "languages",
@@ -23,7 +23,7 @@
         "books": 1,
         "link": "/languages/cpp/tour/",
         "stars": 4,
-        "img": "/theme/images/A_tour_C++.png"
+        "img": "theme/images/A_tour_C++.png"
     },
     {
         "cate": "languages",
@@ -36,7 +36,7 @@
         "books": 1,
         "link": "/languages/cpp/primer/",
         "stars": 5,
-        "img": "/theme/images/C++_primer.png"
+        "img": "theme/images/C++_primer.png"
     },
     {
         "cate": "languages",
@@ -108,7 +108,7 @@
         "difficulty": "beginner",
         "books": 1,
         "link": "/systems/csapp/",
-        "img": "/theme/images/CSAPP.png",
+        "img": "theme/images/CSAPP.png",
         "stars": 5
     },
     {
@@ -158,7 +158,7 @@
         "books": 1,
         "link": "/备注",
         "stars": 4,
-        "img": "/theme/images/2.png"
+        "img": "theme/images/2.png"
     },
     {
         "cate": "blog",
@@ -171,7 +171,7 @@
         "books": 1,
         "link": "/blog/学习计划",
         "stars": 5,
-        "img": "/theme/images/3.png"
+        "img": "theme/images/3.png"
     },
     {
         "cate": "cs-diy",
@@ -184,7 +184,7 @@
         "books": 1,
         "link": "/cs-diy/cs61a/",
         "stars": 5,
-        "img": "/theme/images/5.png"
+        "img": "theme/images/5.png"
     },
     {
         "cate": "cs-diy",
@@ -197,7 +197,7 @@
         "books": 1,
         "link": "/cs-diy/cs61b/",
         "stars": 5,
-        "img": "/theme/images/6.png"
+        "img": "theme/images/6.png"
     },
     {
         "cate": "cs-diy",
@@ -210,7 +210,7 @@
         "books": 1,
         "link": "/cs-diy/cs61b/",
         "stars": 5,
-        "img": "/theme/images/7.png"
+        "img": "theme/images/7.png"
     },
     {
         "cate": "cs-diy",
@@ -223,7 +223,7 @@
         "books": 1,
         "link": "/cs-diy/cs70/",
         "stars": 5,
-        "img": "/theme/images/8.png"
+        "img": "theme/images/8.png"
     },
     {
         "cate": "cs-diy",
@@ -236,7 +236,7 @@
         "books": 1,
         "link": "/cs-diy/csapp/",
         "stars": 5,
-        "img": "/theme/images/9.png"
+        "img": "theme/images/9.png"
     },
     {
         "cate": "cs-diy",
@@ -273,7 +273,7 @@
         "books": 1,
         "link": "/ai-ml/python/effective-python/",
         "stars": 5,
-        "img": "/theme/images/12.png"
+        "img": "theme/images/12.png"
     },
     {
         "cate": "ai-ml",
@@ -286,7 +286,7 @@
         "books": 1,
         "link": "/ai-ml/python/serious-python/",
         "stars": 4,
-        "img": "/theme/images/16.png"
+        "img": "theme/images/16.png"
     },
     {
         "cate": "ai-ml",
@@ -1259,7 +1259,7 @@
         "books": 1,
         "link": "/ai-ml/python/architecture-patterns/",
         "stars": 4,
-        "img": "/theme/images/11.png"
+        "img": "theme/images/11.png"
     },
     {
         "cate": "ai-ml",
@@ -1272,7 +1272,7 @@
         "books": 1,
         "link": "/ai-ml/python/fluent-python/",
         "stars": 5,
-        "img": "/theme/images/13.png"
+        "img": "theme/images/13.png"
     },
     {
         "cate": "ai-ml",
@@ -1285,7 +1285,7 @@
         "books": 1,
         "link": "/ai-ml/python/high-performance-python/",
         "stars": 4,
-        "img": "/theme/images/14.png"
+        "img": "theme/images/14.png"
     },
     {
         "cate": "ai-ml",
@@ -1298,7 +1298,7 @@
         "books": 1,
         "link": "/ai-ml/python/asyncio/",
         "stars": 4,
-        "img": "/theme/images/15.png"
+        "img": "theme/images/15.png"
     },
     {
         "cate": "ai-ml",
