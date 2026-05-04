@@ -1,15 +1,29 @@
 [
     {
         "cate": "languages",
-        "title": "Accelerated C++",
+        "title": "Introducing C++: The Easy Way to Start Learning Modern C++",
         "icon": "📖",
         "iconBg": "rgba(0,180,255,0.15)",
-        "desc": "C++ · 语法基础",
-        "intro": "从实例出发快速学习 C++，跳过 C 风格直接使用现代特性。",
+        "desc": "C++ · 现代语法 · 快速入门",
+        "intro": "专为有编程基础的开发者设计，跳过 C 风格历史包袱，直接从 C++23/26 现代特性入手，通过紧凑的实例快速掌握核心语法与标准库用法。",
         "difficulty": "beginner",
         "books": 1,
-        "link": "/languages/cpp/accelerated/",
-        "stars": 4
+        "link": "/languages/cpp/introducing/",
+        "stars": 5,
+        "img": "/theme/images/10.png"
+    },
+    {
+        "cate": "languages",
+        "title": "A Tour of C++ (2nd Edition)",
+        "icon": "🚀",
+        "iconBg": "rgba(0,180,255,0.15)",
+        "desc": "C++ · 快速入门 · C++之父作品",
+        "intro": "C++之父 Bjarne Stroustrup 亲著，专为有经验的程序员打造。第二版覆盖 C++11/14 核心特性，短小精悍，带你从 C 语言平稳过渡到 Modern C++。",
+        "difficulty": "beginner",
+        "books": 1,
+        "link": "/languages/cpp/tour/",
+        "stars": 4,
+        "img": "/theme/images/A_tour_C++.png"
     },
     {
         "cate": "languages",
@@ -22,7 +36,7 @@
         "books": 1,
         "link": "/languages/cpp/primer/",
         "stars": 5,
-        "img": "/theme/images/10.png"
+        "img": "/theme/images/C++_primer.png"
     },
     {
         "cate": "languages",

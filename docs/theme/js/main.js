@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    var basePath = '/theme/js/';
+    var basePath = 'theme/js/';
 
     var commonModules = [
         'core/background.js',
