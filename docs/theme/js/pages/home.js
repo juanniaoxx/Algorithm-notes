@@ -198,7 +198,7 @@
     }
 
     function loadTopicsData() {
-        return fetch('/theme/js/data/topics.json').then(r => r.json()).then(d => { topicsData = d; return d; }).catch(() => { console.warn('JSON 加载失败'); return []; });
+        return fetch('theme/js/data/topics.json').then(r => r.json()).then(d => { topicsData = d; return d; }).catch(() => { console.warn('JSON 加载失败'); return []; });
     }
 
     function init() {
