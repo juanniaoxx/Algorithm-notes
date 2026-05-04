@@ -1,0 +1,104 @@
+/* ========================================
+   CyberDev Theme - Admonition Colors
+   只改颜色，不改图标和布局
+   ======================================== */
+
+/* Info */
+.md-typeset .admonition.info,
+.md-typeset details.info {
+    border-color: #00d4ff;
+}
+.md-typeset .admonition.info > .admonition-title,
+.md-typeset details.info > summary {
+    background: rgba(0, 212, 255, 0.06);
+}
+
+/* Warning */
+.md-typeset .admonition.warning,
+.md-typeset details.warning {
+    border-color: #ffb347;
+}
+.md-typeset .admonition.warning > .admonition-title,
+.md-typeset details.warning > summary {
+    background: rgba(255, 179, 71, 0.06);
+}
+
+/* Tip */
+.md-typeset .admonition.tip,
+.md-typeset details.tip {
+    border-color: #00ff88;
+}
+.md-typeset .admonition.tip > .admonition-title,
+.md-typeset details.tip > summary {
+    background: rgba(0, 255, 136, 0.06);
+}
+
+/* Danger / Error */
+.md-typeset .admonition.danger,
+.md-typeset .admonition.error,
+.md-typeset details.danger,
+.md-typeset details.error {
+    border-color: #ff2d95;
+}
+.md-typeset .admonition.danger > .admonition-title,
+.md-typeset .admonition.error > .admonition-title,
+.md-typeset details.danger > summary,
+.md-typeset details.error > summary {
+    background: rgba(255, 45, 149, 0.06);
+}
+
+/* Note */
+.md-typeset .admonition.note,
+.md-typeset details.note {
+    border-color: #b347ea;
+}
+.md-typeset .admonition.note > .admonition-title,
+.md-typeset details.note > summary {
+    background: rgba(179, 71, 234, 0.06);
+}
+
+/* Success */
+.md-typeset .admonition.success,
+.md-typeset .admonition.check,
+.md-typeset details.success,
+.md-typeset details.check {
+    border-color: #00ff88;
+}
+.md-typeset .admonition.success > .admonition-title,
+.md-typeset .admonition.check > .admonition-title,
+.md-typeset details.success > summary,
+.md-typeset details.check > summary {
+    background: rgba(0, 255, 136, 0.06);
+}
+
+/* Question */
+.md-typeset .admonition.question,
+.md-typeset .admonition.faq,
+.md-typeset details.question,
+.md-typeset details.faq {
+    border-color: #00e5ff;
+}
+.md-typeset .admonition.question > .admonition-title,
+.md-typeset .admonition.faq > .admonition-title,
+.md-typeset details.question > summary,
+.md-typeset details.faq > summary {
+    background: rgba(0, 229, 255, 0.06);
+}
+
+/* Abstract */
+.md-typeset .admonition.abstract,
+.md-typeset .admonition.summary,
+.md-typeset .admonition.tldr,
+.md-typeset details.abstract,
+.md-typeset details.summary,
+.md-typeset details.tldr {
+    border-color: #606090;
+}
+.md-typeset .admonition.abstract > .admonition-title,
+.md-typeset .admonition.summary > .admonition-title,
+.md-typeset .admonition.tldr > .admonition-title,
+.md-typeset details.abstract > summary,
+.md-typeset details.summary > summary,
+.md-typeset details.tldr > summary {
+    background: rgba(96, 96, 144, 0.06);
+}

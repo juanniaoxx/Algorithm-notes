@@ -1,0 +1,199 @@
+/* ========================================
+   CyberDev Theme - Print Styles
+   打印优化 · 去除背景色和特效
+   ======================================== */
+
+@media print {
+    /* ----- 隐藏不需要的元素 ----- */
+    #bg-canvas,
+    .bg-orb,
+    .cursor-glow,
+    .click-particle,
+    .cyber-scroll-progress,
+    .md-header,
+    .md-tabs,
+    .md-sidebar,
+    .md-footer,
+    .md-search,
+    .md-clipboard,
+    .floating-top-btn,
+    video,
+    iframe {
+        display: none !important;
+    }
+
+    /* ----- 重置颜色为黑白 ----- */
+    :root {
+        --bg-deep: #ffffff;
+        --bg-primary: #ffffff;
+        --bg-card: #ffffff;
+        --text-primary: #000000;
+        --text-secondary: #333333;
+        --text-muted: #666666;
+        --neon-blue: #0000cc;
+        --neon-purple: #660099;
+        --neon-green: #006600;
+        --neon-pink: #990033;
+        --neon-amber: #996600;
+        --code-bg: #f5f5f5;
+        --code-border: #cccccc;
+        --border-subtle: #dddddd;
+        --border-glow: #999999;
+    }
+
+    body {
+        background: #ffffff;
+        color: #000000;
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+
+    /* ----- 重置卡片 ----- */
+    .tech-card {
+        border: 1px solid #cccccc;
+        box-shadow: none;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .tech-card::before,
+    .tech-card::after {
+        display: none !important;
+    }
+
+    .tech-card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    /* ----- 重置代码块 ----- */
+    .md-content .highlight {
+        border: 1px solid #cccccc;
+        box-shadow: none;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .md-content .highlight::before,
+    .md-content .highlight::after {
+        display: none !important;
+    }
+
+    .md-content .highlight pre {
+        background: #fafafa;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
+
+    .md-content .highlight code {
+        color: #000000;
+        font-size: 9pt;
+    }
+
+    /* ----- 重置链接 ----- */
+    .md-content a {
+        color: #0000cc;
+        border-bottom: 1px solid #0000cc;
+        text-decoration: none;
+    }
+
+    .md-content a[href^="http"]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.7em;
+        color: #666666;
+    }
+
+    /* ----- 重置引用块 ----- */
+    .md-content blockquote {
+        border-left: 3px solid #999999;
+        background: #f9f9f9;
+        box-shadow: none;
+    }
+
+    /* ----- 重置表格 ----- */
+    .md-typeset table:not([class]) {
+        border: 1px solid #cccccc;
+    }
+
+    .md-typeset table:not([class]) th {
+        background: #eeeeee;
+        color: #000000;
+        border-bottom: 1px solid #999999;
+    }
+
+    .md-typeset table:not([class]) td {
+        border-bottom: 1px solid #dddddd;
+    }
+
+    /* ----- 重置提示框 ----- */
+    .md-typeset .admonition {
+        border: 1px solid #cccccc;
+        background: #fafafa;
+        box-shadow: none;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    /* ----- 重置标题 ----- */
+    .md-content h1::after,
+    .md-content h2,
+    .md-content h3::before {
+        box-shadow: none;
+        text-shadow: none;
+    }
+
+    .md-content h2 {
+        border-left: 3px solid #000000;
+        box-shadow: none;
+    }
+
+    /* ----- 视频改为链接 ----- */
+    .video-player-wrapper {
+        border: 1px solid #cccccc;
+        box-shadow: none;
+    }
+
+    .video-player-wrapper::after {
+        content: "[视频内容，请访问原页面查看]";
+        display: block;
+        padding: 2rem;
+        text-align: center;
+        color: #666666;
+    }
+
+    .video-player-wrapper video,
+    .video-player-wrapper iframe,
+    .video-player-wrapper .video-controls-bar {
+        display: none !important;
+    }
+
+    /* ----- 分页控制 ----- */
+    .md-content h1,
+    .md-content h2 {
+        page-break-after: avoid;
+    }
+
+    .md-content h3,
+    .md-content h4 {
+        page-break-after: avoid;
+    }
+
+    .md-content p,
+    .md-content li,
+    .md-content blockquote {
+        orphans: 3;
+        widows: 3;
+    }
+
+    /* ----- 全宽利用 ----- */
+    .md-content__inner {
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* ----- 页眉页脚 ----- */
+    @page {
+        margin: 2cm;
+    }
+}

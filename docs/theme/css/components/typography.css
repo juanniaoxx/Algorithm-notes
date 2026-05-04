@@ -1,0 +1,280 @@
+/* ========================================
+   CyberDev Theme - Typography
+   标题 · 正文 · 链接 · 行内代码 · 引用块
+   ======================================== */
+
+/* ----- 正文区域容器 ----- */
+.md-content {
+    color: var(--text-primary);
+}
+
+.md-content__inner {
+    padding: 2rem 2rem;
+}
+
+/* ----- H1 标题 ----- */
+.md-content h1 {
+    font-family: var(--font-display);
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+    position: relative;
+    display: inline-block;
+}
+
+/* H1 霓虹下划线 */
+.md-content h1::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 60%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple), transparent);
+    border-radius: 2px;
+    box-shadow: var(--glow-blue);
+}
+
+/* ----- H2 标题 ----- */
+.md-content h2 {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 2.5rem 0 1rem;
+    padding-left: 1rem;
+    border-left: 3px solid var(--neon-blue);
+    box-shadow: -4px 0 12px rgba(0, 212, 255, 0.15);
+}
+
+/* ----- H3 标题 ----- */
+.md-content h3 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--neon-purple);
+    margin: 1.5rem 0 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.md-content h3::before {
+    content: '▸';
+    font-size: 0.8rem;
+    color: var(--neon-purple);
+}
+
+/* ----- H4 标题 ----- */
+.md-content h4 {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 1.25rem 0 0.5rem;
+}
+
+/* ----- H5 / H6 ----- */
+.md-content h5,
+.md-content h6 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1rem 0 0.5rem;
+}
+
+.md-content h5 { font-size: 0.95rem; }
+.md-content h6 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* ----- 段落 ----- */
+.md-content p {
+    margin: 1rem 0;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.75;
+}
+
+/* 技术文档不需要首行缩进 */
+.md-typeset p {
+    text-indent: 0;
+}
+
+/* ----- 链接 ----- */
+.md-content a {
+    color: var(--neon-blue);
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(0, 212, 255, 0.3);
+    transition: all var(--transition-fast);
+}
+
+.md-content a:hover {
+    color: var(--neon-cyan);
+    border-bottom-color: var(--neon-cyan);
+    text-shadow: 0 0 8px rgba(0, 212, 255, 0.4);
+}
+
+/* ----- 行内代码 ----- */
+.md-content code:not(pre code) {
+    background: rgba(0, 212, 255, 0.08);
+    color: var(--neon-blue);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    font-family: var(--font-code);
+    font-size: 0.85em;
+    border: 1px solid rgba(0, 212, 255, 0.1);
+    white-space: nowrap;
+}
+
+/* ----- 粗体 ----- */
+.md-content strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* ----- 斜体 ----- */
+.md-content em {
+    color: var(--neon-amber);
+    font-style: italic;
+}
+
+/* ----- 删除线 ----- */
+.md-content del {
+    color: var(--text-muted);
+    text-decoration: line-through;
+}
+
+/* ----- 水平线 ----- */
+.md-content hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-glow), transparent);
+    margin: 2rem 0;
+}
+
+/* ----- 引用块----- */
+.md-content blockquote {
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    background: rgba(179, 71, 234, 0.05);
+    border-left: 3px solid var(--neon-purple);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    box-shadow: -4px 0 16px rgba(179, 71, 234, 0.08);
+}
+
+.md-content blockquote p {
+    margin: 0.3rem 0;
+    color: var(--text-secondary);
+}
+
+.md-content blockquote strong {
+    color: var(--neon-purple);
+}
+
+/* ----- 列表 ----- */
+.md-content ul,
+.md-content ol {
+    margin: 0.75rem 0;
+    padding-left: 1.5rem;
+    color: var(--text-secondary);
+}
+
+.md-content li {
+    margin: 0.3rem 0;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.md-content li::marker {
+    color: var(--neon-blue);
+}
+
+/* ----- 任务列表 ----- */
+.md-content .task-list-item {
+    list-style: none;
+}
+
+.md-content .task-list-item input[type="checkbox"] {
+    accent-color: var(--neon-blue);
+    margin-right: 0.5rem;
+}
+
+/* ----- 脚注 ----- */
+.md-content .footnote {
+    border-top: 1px solid var(--border-subtle);
+    margin-top: 2rem;
+    padding-top: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.md-content .footnote a {
+    color: var(--neon-purple);
+}
+
+/* ----- 图片说明文字 ----- */
+.md-content figure figcaption {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+/* ----- Mark 高亮 ----- */
+.md-content mark {
+    background: rgba(255, 179, 71, 0.2);
+    color: var(--neon-amber);
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+}
+
+/* ----- 缩写词 ----- */
+.md-content abbr {
+    border-bottom: 1px dotted var(--text-muted);
+    cursor: help;
+    text-decoration: none;
+}
+
+/* ----- 键盘按键 ----- */
+.md-content kbd {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+    padding: 0.15em 0.4em;
+    font-family: var(--font-code);
+    font-size: 0.85em;
+    color: var(--text-secondary);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* ----- 暗色模式微调 ----- */
+[data-md-color-scheme="slate"] .md-content {
+    color: var(--text-primary);
+}
+
+/* ----- 响应式 ----- */
+@media (max-width: 768px) {
+    .md-content__inner {
+        padding: 1.5rem 1rem;
+    }
+
+    .md-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .md-content h2 {
+        font-size: 1.3rem;
+    }
+
+    .md-content h3 {
+        font-size: 1.05rem;
+    }
+
+    .md-content p,
+    .md-content li {
+        font-size: 0.9rem;
+    }
+}

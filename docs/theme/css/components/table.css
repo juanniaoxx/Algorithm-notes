@@ -1,0 +1,168 @@
+/* ========================================
+   CyberDev Theme - Table
+   数据表格样式 · 斑马纹 · 悬停高亮
+   ======================================== */
+
+/* ----- 表格容器（响应式横向滚动） ----- */
+.md-typeset__table {
+    margin: 1.5rem 0;
+    overflow-x: auto;
+    border-radius: var(--radius-sm);
+}
+
+.md-typeset__table::-webkit-scrollbar {
+    height: 4px;
+}
+
+.md-typeset__table::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.md-typeset__table::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 2px;
+}
+
+/* ----- 表格基础样式 ----- */
+.md-typeset table:not([class]) {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    border: 1px solid var(--border-subtle);
+    background: rgba(255, 255, 255, 0.02);
+    font-size: 0.9rem;
+    box-shadow: none;
+}
+
+/* ----- 表头 ----- */
+.md-typeset table:not([class]) th {
+    background: rgba(0, 212, 255, 0.06);
+    color: var(--neon-blue);
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-glow);
+    white-space: nowrap;
+    font-family: var(--font-display);
+    letter-spacing: 0.02em;
+}
+
+/* ----- 表体单元格 ----- */
+.md-typeset table:not([class]) td {
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    vertical-align: middle;
+}
+
+/* ----- 行悬停效果 ----- */
+.md-typeset table:not([class]) tbody tr:hover td {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+/* ----- 斑马纹 ----- */
+.md-typeset table:not([class]) tbody tr:nth-child(even) td {
+    background: rgba(255, 255, 255, 0.015);
+}
+
+.md-typeset table:not([class]) tbody tr:nth-child(even):hover td {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+/* ----- 最后一行去除底部边框 ----- */
+.md-typeset table:not([class]) tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* ----- 代码在表格内 ----- */
+.md-typeset table:not([class]) code {
+    background: rgba(0, 212, 255, 0.08);
+    color: var(--neon-blue);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    font-family: var(--font-code);
+    font-size: 0.82em;
+    white-space: nowrap;
+}
+
+/* ----- 链接在表格内 ----- */
+.md-typeset table:not([class]) a {
+    color: var(--neon-blue);
+    border-bottom: 1px dashed rgba(0, 212, 255, 0.3);
+}
+
+.md-typeset table:not([class]) a:hover {
+    color: var(--neon-cyan);
+    border-bottom-color: var(--neon-cyan);
+}
+
+/* ----- 表格内徽章 ----- */
+.md-typeset table:not([class]) .badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.15rem 0.5rem;
+    border-radius: var(--radius-full);
+    white-space: nowrap;
+}
+
+.badge-stable {
+    background: rgba(0, 255, 136, 0.12);
+    color: var(--neon-green);
+}
+
+.badge-beta {
+    background: rgba(255, 179, 71, 0.12);
+    color: var(--neon-amber);
+}
+
+.badge-alpha {
+    background: rgba(255, 45, 149, 0.12);
+    color: var(--neon-pink);
+}
+
+.badge-deprecated {
+    background: rgba(96, 96, 144, 0.12);
+    color: var(--text-muted);
+    text-decoration: line-through;
+}
+
+/* ----- 对齐辅助类 ----- */
+.md-typeset table:not([class]) .text-left   { text-align: left; }
+.md-typeset table:not([class]) .text-center { text-align: center; }
+.md-typeset table:not([class]) .text-right  { text-align: right; }
+
+.md-typeset table:not([class]) .text-nowrap { white-space: nowrap; }
+
+/* ----- 紧凑表格 ----- */
+.md-typeset table:not([class]).table-sm th,
+.md-typeset table:not([class]).table-sm td {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.8rem;
+}
+
+/* ----- 无边框表格 ----- */
+.md-typeset table:not([class]).table-borderless {
+    border: none;
+}
+
+.md-typeset table:not([class]).table-borderless th,
+.md-typeset table:not([class]).table-borderless td {
+    border: none;
+}
+
+/* ----- 响应式 ----- */
+@media (max-width: 768px) {
+    .md-typeset table:not([class]) th,
+    .md-typeset table:not([class]) td {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.8rem;
+    }
+
+    .md-typeset table:not([class]) th {
+        font-size: 0.78rem;
+    }
+}

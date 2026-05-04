@@ -1,0 +1,191 @@
+/* ========================================
+   CyberDev Theme - Collapsible Book List
+   可折叠书籍目录
+   ======================================== */
+
+.collapsible {
+    margin: 1.5rem 0;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.02);
+    transition: border-color var(--transition-base);
+}
+
+.collapsible:hover {
+    border-color: var(--border-glow);
+}
+
+.collapsible-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    background: rgba(0, 212, 255, 0.04);
+    border-bottom: 1px solid var(--border-subtle);
+    cursor: pointer;
+    user-select: none;
+    transition: background var(--transition-fast);
+}
+
+.collapsible-header:hover {
+    background: rgba(0, 212, 255, 0.08);
+}
+
+.collapsible-header strong {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.collapsible-header strong .collapsible-icon {
+    color: var(--neon-blue);
+    font-size: 1rem;
+}
+
+.collapsible-header .collapsible-count {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-left: 0.5rem;
+}
+
+.collapsible-toggle {
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-subtle);
+    color: var(--neon-blue);
+    padding: 0.3rem 1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-family: var(--font-body);
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.collapsible-toggle:hover {
+    background: rgba(0, 212, 255, 0.1);
+    border-color: var(--border-glow);
+    box-shadow: var(--glow-blue);
+}
+
+.collapsible-toggle .toggle-icon {
+    transition: transform var(--transition-base);
+    font-size: 0.7rem;
+}
+
+.collapsible-toggle.collapsed .toggle-icon {
+    transform: rotate(-90deg);
+}
+
+.collapsible-content {
+    transition: max-height 0.35s ease;
+    overflow: hidden;
+}
+
+.collapsible-content.collapsed {
+    max-height: 0 !important;
+}
+
+.collapsible-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 1.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    transition: background var(--transition-fast);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+
+.collapsible-item:last-child {
+    border-bottom: none;
+}
+
+.collapsible-item:hover {
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-primary);
+}
+
+.collapsible-item .item-icon {
+    color: var(--neon-purple);
+    margin-right: 0.5rem;
+    font-size: 0.75rem;
+}
+
+.collapsible-item .item-date {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-family: var(--font-code);
+    flex-shrink: 0;
+    margin-left: 1rem;
+}
+
+.collapsible-item .item-badge {
+    font-size: 0.65rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    margin-left: 0.75rem;
+    flex-shrink: 0;
+}
+
+/* 原 pdf 改为冷灰/紫色系 - 表示"文件/资料"，不表状态 */
+.item-badge-pdf {
+    background: rgba(150, 150, 180, 0.12);
+    color: #a0a0c0;
+    border: 1px solid rgba(150, 150, 180, 0.2);
+}
+
+.item-badge-video {
+    background: rgba(0, 212, 255, 0.12);
+    color: var(--neon-blue);
+}
+
+/* 已完成 - 霓虹绿（醒目、正向） */
+.item-badge-complete {
+    background: rgba(0, 255, 100, 0.15);
+    color: #00ff66;
+    border: 1px solid rgba(0, 255, 100, 0.4);
+}
+
+/* 未完成 - 霓虹红/粉（警示、待办） */
+.item-badge-incomplete {
+    background: rgba(255, 45, 149, 0.15);
+    color: #ff3b6f;
+    border: 1px solid rgba(255, 45, 149, 0.35);
+}
+
+.collapsible-subsection {
+    margin-left: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.collapsible-subsection-header {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--neon-blue);
+    padding: 0.3rem 0;
+    border-bottom: 1px dashed var(--border-subtle);
+    cursor: pointer;
+    user-select: none;
+}
+
+.collapsible-subsection-header:hover {
+    color: var(--neon-cyan);
+}
+
+.collapsible-subsection-content {
+    padding-left: 0.8rem;
+    display: block;
+}
+
+.collapsible-subsection-content.collapsed {
+    display: none;
+}

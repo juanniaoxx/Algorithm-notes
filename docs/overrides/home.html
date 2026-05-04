@@ -1,30 +1,380 @@
-{#-
-  This file was automatically generated - do not edit
--#}
-{% extends "main.html" %}
-{% block tabs %}
-  <!-- {{ super() }}
-  <style>.md-header{position:initial}.md-main__inner{margin:0}.md-content{display:none}@media screen and (min-width:60em){.md-sidebar--secondary{display:none}}@media screen and (min-width:76.25em){.md-sidebar--primary{display:none}}</style>
-  <section class="mdx-container">
-    <div class="md-grid md-typeset">
-      <div class="mdx-hero">
-        <div class="mdx-hero__image">
-          <img src="assets/images/illustration.png" alt="" width="1659" height="1200" draggable="false">
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weary Computer Sciences</title>
+
+    <!-- 字体 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+
+    <!-- 主题 CSS -->
+    <link rel="stylesheet" href="theme/css/main.css">
+
+    <style>
+        /* ---- 开屏动画 — 数字雨黑客风格 ---- */
+        .splash-screen {
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            cursor: pointer;
+            background: #020408;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+
+        .splash-screen.fade-out {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        #splashCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .splash-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: radial-gradient(ellipse at center, rgba(2, 4, 8, 0.3) 0%, rgba(2, 4, 8, 0.85) 100%);
+            pointer-events: none;
+        }
+
+        .splash-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            animation: splashFadeUp 1s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+
+        @keyframes splashFadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .splash-logo {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            color: #00d4ff;
+            text-shadow: 0 0 40px rgba(0, 212, 255, 0.5), 0 0 80px rgba(0, 212, 255, 0.2);
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        /* 故障伪影 */
+        .splash-logo::before,
+        .splash-logo::after {
+            content: '</>Welcome CS';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.6;
+            font-size: inherit;
+            font-weight: inherit;
+        }
+
+        .splash-logo::before {
+            color: #ff2d95;
+            z-index: -1;
+            animation: glitchSplash 0.3s infinite alternate-reverse;
+        }
+
+        .splash-logo::after {
+            color: #00d4ff;
+            z-index: -2;
+            animation: glitchSplash 0.25s infinite alternate;
+        }
+
+        @keyframes glitchSplash {
+            0% {
+                transform: translate(0);
+            }
+
+            25% {
+                transform: translate(-3px, 2px);
+            }
+
+            50% {
+                transform: translate(3px, -1px);
+            }
+
+            75% {
+                transform: translate(-2px, -2px);
+            }
+
+            100% {
+                transform: translate(2px, 1px);
+            }
+        }
+
+        .splash-subtitle {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+            color: #606090;
+            letter-spacing: 0.3em;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+        .splash-hint {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: #00ff88;
+            letter-spacing: 0.05em;
+        }
+
+        .splash-cursor {
+            animation: splashBlink 1s step-end infinite;
+        }
+
+        @keyframes splashBlink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        #mainContent {
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 开屏动画 — 数字雨黑客风格 -->
+    <div class="splash-screen" id="splashScreen">
+        <canvas id="splashCanvas"></canvas>
+        <div class="splash-overlay"></div>
+        <div class="splash-content">
+            <div class="splash-logo">&lt;Welcome CS/&gt;</div>
+            <div class="splash-subtitle">Code · Learn · Build</div>
+            <div class="splash-hint">
+                <span class="splash-cursor">▮</span> 点击进入文档宇宙
+            </div>
         </div>
-        <div class="mdx-hero__content">
-          <h1>Technical documentation that just works</h1>
-          <p>{{ config.site_description }}. Set up in 5 minutes.</p>
-          <a href="{{ page.next_page.url | url }}" title="{{ page.next_page.title | e }}" class="md-button md-button--primary">
-            Quick start
-          </a>
-          <a href="{{ 'insiders/' | url }}" title="Material for MkDocs Insiders" class="md-button">
-            Get Insiders
-          </a>
-        </div>
-      </div>
     </div>
-  </section> -->
-  
-{% endblock %}
-{% block content %}{% endblock %}
-{% block footer %}{% endblock %}
+
+    <!-- 背景元素 -->
+    <div class="bg-orb bg-orb-1"></div>
+    <div class="bg-orb bg-orb-2"></div>
+    <div class="bg-orb bg-orb-3"></div>
+
+    <!-- 导航栏 -->
+    <header class="md-header" data-md-component="header"
+        style="background:var(--bg-glass); backdrop-filter:blur(20px); border-bottom:1px solid var(--border-subtle); position:sticky; top:0; z-index:1000;">
+        <nav class="md-header__inner md-grid"
+            style="display:flex; align-items:center; justify-content:space-between; padding:0 1.5rem; height:64px; max-width:1400px; margin:0 auto;">
+            <a href="/"
+                style="display:flex; align-items:center; gap:0.5rem; text-decoration:none; color:var(--text-primary); font-family:var(--font-display); font-weight:700; font-size:1.2rem;">
+                <span
+                    style="background:linear-gradient(135deg, var(--neon-blue), var(--neon-purple)); color:#fff; width:32px; height:32px; border-radius:8px; display:inline-flex; align-items:center; justify-content:center; font-size:0.8rem;">&lt;/&gt;</span>
+                Welcome CS
+            </a>
+            <div style="display:flex; align-items:center; gap:0.5rem; padding:0.5rem 1rem; background:rgba(255,255,255,0.04); border:1px solid var(--border-subtle); border-radius:24px; color:var(--text-muted); font-size:0.85rem; min-width:220px; transition: border-color 0.2s, box-shadow 0.2s;"
+                onmouseover="this.style.borderColor='var(--border-glow)'; this.style.boxShadow='var(--glow-blue)'"
+                onmouseout="this.style.borderColor='var(--border-subtle)'; this.style.boxShadow='none'">
+                <i class="fa fa-search"></i>
+                <input type="text" id="homeSearchInput" placeholder="搜索技术栈、框架、教程..."
+                    style="background:transparent; border:none; outline:none; color:var(--text-primary); width:100%; font-size:0.85rem; font-family:inherit;">
+            </div>
+            <a href="https://github.com/juanniaoxx" target="_blank"
+                style="color:var(--text-secondary); font-size:1.3rem; transition:color 0.2s;"
+                onmouseover="this.style.color='var(--neon-blue)'" onmouseout="this.style.color='var(--text-secondary)'">
+                <i class="fa fa-github"></i>
+            </a>
+        </nav>
+    </header>
+
+    <!-- 主内容 -->
+    <div id="mainContent"
+        style="opacity:0; transition: opacity 0.8s ease; min-height:100vh; position:relative; z-index:1;">
+        <main style="max-width:1400px; margin:0 auto; padding:2rem 1.5rem;">
+
+            <!-- 标题行 -->
+            <div class="section-fade mb-4">
+                <div
+                    style="display:flex; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
+                    <div class="clock-box" style="position:relative; z-index:1; margin-top:1rem;">
+                        <div class="clock-time" id="liveClock">--:--:--</div>
+                        <div class="clock-date" id="gregorianDate">----年--月--日</div>
+                    </div>
+                    <div style="text-align:center; flex:1;">
+                        <h1
+                            style="font-family:var(--font-display); font-size:2.2rem; font-weight:700; color:var(--text-primary); margin:0 0 0.5rem;">
+                            📚 Tech Stack Library
+                        </h1>
+                        <div class="section-fade" style="text-align:center; margin-bottom:1.5rem;">
+                            <div class="quote-ticker" style="display:inline-flex;">
+                                <i class="fa fa-code" style="color:var(--neon-blue);"></i>
+                                <span id="dynamicQuote">Talk is cheap. Show me the code.</span>
+                                <i class="fa fa-terminal" style="color:var(--neon-purple);"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="width:130px; display:none;" class="md:block"></div>
+                </div>
+            </div>
+
+            <!-- 金句横幅 — 居中对齐，在标题行正下方 -->
+
+
+            <!-- 统计数字 -->
+            <div class="section-fade mb-6" style="position: relative; z-index: 1;">
+                <div style="display:flex; justify-content:center; gap:2rem;">
+                    <div class="stat-card">
+                        <div class="stat-number" style="color:var(--neon-blue);" id="topicCount">0</div>
+                        <div class="stat-label">📦 资料</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" style="color:var(--neon-purple);" id="categoryCount">0</div>
+                        <div class="stat-label">📂 类别</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" style="color:var(--neon-green);" id="totalLessons">0</div>
+                        <div class="stat-label">📝 条目</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 分类按钮 -->
+            <div class="section-fade mb-12" style="text-align:center;" id="categorySection">
+                <div style="display:inline-flex; flex-wrap:wrap; justify-content:center; gap:0.5rem;">
+                    <button class="cat-btn active" data-category="all">🔮 全部</button>
+                    <button class="cat-btn" data-category="languages">📝 编程语言</button>
+                    <button class="cat-btn" data-category="ai-ml">🤖 AI / ML</button>
+                    <button class="cat-btn" data-category="math">📐 数学与理论</button>
+                    <button class="cat-btn" data-category="systems">💻 系统与体系</button>
+                    <button class="cat-btn" data-category="network">🌐 计算机网络</button>
+                    <button class="cat-btn" data-category="database">🗄️ 数据库</button>
+                    <button class="cat-btn" data-category="distributed">🔗 分布式系统</button>
+                    <button class="cat-btn" data-category="code-quality">✨ 代码质量</button>
+                    <button class="cat-btn" data-category="algorithms">🧮 面试与算法</button>
+                    <button class="cat-btn" data-category="tools">🔧 工具与其他</button>
+                    <button class="cat-btn" data-category="blog">💬 杂谈</button>
+                    <button class="cat-btn" data-category="cs-diy">🎓 CS 自学</button>
+                </div>
+            </div>
+            <!-- 排序栏 -->
+            <div class="section-fade mb-6" style="text-align:center;">
+                <div style="display:inline-flex; flex-wrap:wrap; justify-content:center; gap:0.5rem;" id="sortSection">
+                    <button class="sort-btn active" data-sort="default">📋 默认</button>
+                    <button class="sort-btn" data-sort="difficulty-asc">🔰 难度从低到高</button>
+                    <button class="sort-btn" data-sort="difficulty-desc">⚡ 难度从高到低</button>
+                    <button class="sort-btn" data-sort="stars-desc">⭐ 评分最高</button>
+                    <button class="sort-btn" data-sort="name-asc">🔤 字母 A-Z</button>
+                </div>
+            </div>
+            <!-- 卡片网格 -->
+            <div class="section-fade card-grid" id="topicContainer"></div>
+
+        </main>
+
+    </div>
+
+    <!-- 浮动按钮 -->
+    <button id="backToTop" class="floating-btn floating-btn-back" title="回到顶部" style="display:none;">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+    <button id="burstParticlesBtn" class="floating-btn floating-btn-burst" title="粒子爆发">
+        <i class="fa fa-magic"></i>
+    </button>
+
+    <!-- 主题 JS -->
+    <script src="theme/js/main.js"></script>
+    <script src="theme/js/video-player.js"></script>
+
+    <!-- 开屏逻辑 -->
+    <script>
+        (function () {
+            var splash = document.getElementById('splashScreen');
+            var main = document.getElementById('mainContent');
+            if (!splash || !main) return;
+
+            // ---- 数字雨 Canvas ----
+            var canvas = document.getElementById('splashCanvas');
+            var ctx = canvas.getContext('2d');
+            var w, h, drops = [];
+            var chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789<>/{}[]()*&^%$#@!';
+            var fontSize = 16;
+
+            function resize() {
+                w = canvas.width = window.innerWidth;
+                h = canvas.height = window.innerHeight;
+                var cols = Math.floor(w / fontSize);
+                drops = [];
+                for (var i = 0; i < cols; i++) drops[i] = Math.random() * -h / fontSize;
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            function drawRain() {
+                ctx.fillStyle = 'rgba(2,4,8,0.12)';
+                ctx.fillRect(0, 0, w, h);
+                ctx.fillStyle = '#00d4ff';
+                ctx.font = fontSize + 'px "JetBrains Mono"';
+                for (var i = 0; i < drops.length; i++) {
+                    var char = chars[Math.floor(Math.random() * chars.length)];
+                    var x = i * fontSize;
+                    var y = drops[i] * fontSize;
+                    ctx.globalAlpha = Math.random() * 0.5 + 0.3;
+                    ctx.fillText(char, x, y);
+                    if (y > h && Math.random() > 0.975) drops[i] = 0;
+                    drops[i]++;
+                }
+                ctx.globalAlpha = 1;
+                splash._rainId = requestAnimationFrame(drawRain);
+            }
+            drawRain();
+
+            // ---- 进入主页 ----
+            function enterMain() {
+                cancelAnimationFrame(splash._rainId);
+                splash.classList.add('fade-out');
+                main.style.opacity = '1';
+                setTimeout(function () { splash.style.display = 'none'; }, 600);
+            }
+            splash.addEventListener('click', enterMain);
+            setTimeout(function () {
+                if (splash.style.display !== 'none') enterMain();
+            }, 5000);
+        })();
+    </script>
+
+</body>
+
+</html>

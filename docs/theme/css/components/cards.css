@@ -1,0 +1,431 @@
+/* ========================================
+   CyberDev Theme - Tech Cards
+   技术主题卡片 · 首页网格 · 光晕边框 · 光泽扫过
+   ======================================== */
+
+/* ----- 卡片网格容器 ----- */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 0.5rem 0;
+}
+
+/* ----- 单个卡片 ----- */
+.tech-card {
+    position: relative;
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: all var(--transition-slow);
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* 卡片入场动画 */
+.tech-card.visible {
+    animation: cardSlideIn 0.5s ease-out forwards;
+}
+
+@keyframes cardSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ----- 霓虹边框光晕（hover 时显示） ----- */
+.tech-card::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: calc(var(--radius-lg) + 1px);
+    padding: 1px;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 212, 255, 0.4),
+        rgba(179, 71, 234, 0.4),
+        rgba(0, 212, 255, 0.2)
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.tech-card:hover::before {
+    opacity: 1;
+}
+
+/* ----- 光泽扫过效果 ----- */
+.tech-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 212, 255, 0.06),
+        transparent
+    );
+    transform: skewX(-25deg);
+    z-index: 3;
+    pointer-events: none;
+    transition: left 0.7s ease;
+}
+
+.tech-card:hover::after {
+    left: 125%;
+}
+
+/* ----- 卡片悬停整体效果 ----- */
+.tech-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--card-hover-shadow);
+}
+
+/* ----- 卡片内部结构 ----- */
+.tech-card-inner {
+    position: relative;
+    z-index: 1;
+    padding: 1.5rem;
+}
+
+/* ----- 图标容器 ----- */
+.tech-icon-wrap {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    flex-shrink: 0;
+}
+
+/* ----- 难度徽章 ----- */
+.tech-difficulty {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--radius-full);
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+}
+
+.tech-difficulty.beginner {
+    background: rgba(0, 255, 136, 0.12);
+    color: var(--neon-green);
+}
+
+.tech-difficulty.intermediate {
+    background: rgba(255, 179, 71, 0.12);
+    color: var(--neon-amber);
+}
+
+.tech-difficulty.advanced {
+    background: rgba(255, 45, 149, 0.12);
+    color: var(--neon-pink);
+}
+
+/* ----- 卡片标题 ----- */
+.tech-card-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+    line-height: 1.3;
+    transition: color var(--transition-fast);
+}
+
+.tech-card:hover .tech-card-title {
+    color: var(--neon-blue);
+}
+
+/* ----- 卡片描述 ----- */
+.tech-card-desc {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+/* ----- 星级评分 ----- */
+.tech-card-stars {
+    display: flex;
+    align-items: center;
+    gap: 0.15rem;
+    margin-bottom: 0.5rem;
+}
+
+.tech-card-stars .star {
+    font-size: 0.7rem;
+}
+
+.tech-card-stars .star.filled {
+    color: var(--neon-amber);
+}
+
+.tech-card-stars .star.empty {
+    color: rgba(255, 255, 255, 0.1);
+}
+
+.tech-card-lessons {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    margin-left: 0.5rem;
+}
+
+/* ----- 卡片简介文字 ----- */
+.tech-card-intro {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* ----- 卡片内部链接覆盖 ----- */
+.tech-card a {
+    color: inherit;
+    text-decoration: none;
+    border: none;
+}
+
+.tech-card a:hover {
+    text-shadow: none;
+}
+
+/* ----- 加载骨架屏 ----- */
+.tech-card-skeleton {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+}
+
+.tech-card-skeleton .skeleton-line {
+    height: 14px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+    animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+.tech-card-skeleton .skeleton-line:first-child {
+    width: 60%;
+    height: 20px;
+}
+
+.tech-card-skeleton .skeleton-line:nth-child(3) {
+    width: 80%;
+}
+
+.tech-card-skeleton .skeleton-line:last-child {
+    width: 40%;
+}
+
+@keyframes skeletonPulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.8; }
+}
+
+/* ----- 空状态 ----- */
+.card-grid-empty {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--text-muted);
+    grid-column: 1 / -1;
+}
+
+.card-grid-empty i {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 0.75rem;
+    opacity: 0.3;
+}
+
+.card-grid-empty p {
+    font-size: 0.9rem;
+}
+
+/* ----- 响应式 ----- */
+@media (max-width: 640px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .tech-card-inner {
+        padding: 1.25rem;
+    }
+}
+
+/* ========================================
+   3D 翻转卡片效果（追加，不影响原尺寸）
+   ======================================== */
+
+.tech-card {
+    perspective: 1000px;
+    height: auto;
+    background: transparent;
+    border: none;
+    overflow: visible;
+}
+
+.tech-card::before,
+.tech-card::after {
+    display: none;
+}
+
+.tech-card-inner {
+    position: relative;
+    width: 100%;
+    transition: transform 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    transform-style: preserve-3d;
+    padding: 0;
+    background: none;
+}
+
+.tech-card:hover .tech-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* 正面 */
+.tech-card-front {
+    position: relative;
+    z-index: 1;
+    backface-visibility: hidden;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    padding: 0;
+    height: 460px;
+    display: flex;
+    flex-direction: column;  
+}
+
+.tech-card-img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.tech-card-img-label {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    border-top: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.tech-card-img-label span {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--neon-blue);
+    text-align: center;
+}
+
+.tech-card-placeholder {
+    padding: 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    height: 100%;  
+    min-height: unset;
+}
+
+.tech-card-placeholder .tech-icon-wrap {
+    width: 56px;
+    height: 56px;
+    font-size: 1.8rem;
+    margin-bottom: 0;
+}
+
+.tech-card-placeholder .tech-card-title {
+    margin-bottom: 0;
+}
+
+.tech-card-placeholder .tech-card-desc {
+    margin-bottom: 0;
+}
+
+.tech-card-back {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    background: rgba(18, 18, 42, 0.95);
+    border: 1px solid var(--border-glow);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    height: 460px;
+}
+
+.tech-card-back .tech-card-title {
+    margin: 0;
+}
+
+.tech-card-back .tech-card-desc {
+    margin: 0;
+}
+
+.tech-card-back .tech-card-intro {
+    flex: 1;
+    margin: 0.25rem 0;
+    overflow: hidden;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.tech-card-back .tech-icon-wrap {
+    margin-bottom: 0;
+}
+
+.tech-card-back .tech-card-stars {
+    margin: 0;
+}
+
+.tech-card-link {
+    margin-top: 0;
+    padding: 0.35rem 1rem;
+    border-radius: var(--radius-full);
+    background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: box-shadow var(--transition-fast);
+    align-self: flex-start;
+}
+
+.tech-card-link:hover {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+}
