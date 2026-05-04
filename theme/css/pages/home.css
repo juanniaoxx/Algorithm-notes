@@ -1,0 +1,464 @@
+/* ========================================
+   CyberDev Theme - Home Page
+   首页专属样式：开屏 · 统计卡片 · 分类按钮 · 金句横幅
+   ======================================== */
+
+/* ========================================
+   开屏动画
+   ======================================== */
+.splash-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    cursor: pointer;
+    background: var(--bg-deep);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.splash-screen.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.splash-content {
+    text-align: center;
+    animation: splashFadeUp 1s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+@keyframes splashFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 开屏 Logo */
+.splash-logo {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple), var(--neon-blue));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: splashShimmer 3s ease-in-out infinite;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+@keyframes splashShimmer {
+    0%, 100% { background-position: 0% center; }
+    50% { background-position: 200% center; }
+}
+
+.splash-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    margin-top: 0.5rem;
+    font-family: var(--font-body);
+}
+
+.splash-hint {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    margin-top: 2rem;
+    animation: splashBounce 2s infinite;
+}
+
+@keyframes splashBounce {
+    0%, 100% { transform: translateY(0); opacity: 0.5; }
+    50% { transform: translateY(-10px); opacity: 1; }
+}
+
+/* ========================================
+   金句横幅
+   ======================================== */
+.quote-ticker {
+    background: rgba(0, 212, 255, 0.06);
+    border: 1px solid rgba(0, 212, 255, 0.12);
+    border-radius: var(--radius-full);
+    padding: 0.5rem 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: border-color var(--transition-base);
+}
+
+.quote-ticker:hover {
+    border-color: var(--border-glow);
+}
+
+.quote-ticker i {
+    font-size: 0.8rem;
+}
+
+.quote-ticker .quote-icon-left {
+    color: var(--neon-blue);
+}
+
+.quote-ticker .quote-icon-right {
+    color: var(--neon-purple);
+}
+
+.quote-ticker .quote-text {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    transition: opacity 0.3s ease;
+}
+
+/* ========================================
+   首页标题区域
+   ======================================== */
+.home-title-section {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.home-title {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    position: relative;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.home-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+    border-radius: 2px;
+}
+
+.home-subtitle {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-top: 1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ========================================
+   统计卡片网格
+   ======================================== */
+.stats-grid {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-base);
+    min-width: 100px;
+}
+
+.stat-card:hover {
+    border-color: rgba(0, 212, 255, 0.3);
+    box-shadow: var(--glow-blue);
+    transform: translateY(-2px);
+}
+
+.stat-number {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--neon-blue);
+    line-height: 1;
+}
+
+.stat-card:nth-child(2) .stat-number {
+    color: var(--neon-purple);
+}
+
+.stat-card:nth-child(3) .stat-number {
+    color: var(--neon-green);
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 0.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* ========================================
+   分类按钮组
+   ======================================== */
+.category-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.cat-btn {
+    padding: 0.5rem 1.25rem;
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-subtle);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+    font-family: var(--font-body);
+}
+
+.cat-btn:hover {
+    color: var(--text-primary);
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+/* 激活态 */
+.cat-btn.active {
+    color: #ffffff;
+    background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+    border-color: transparent;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+/* 点击涟漪效果 */
+.cat-btn:active::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.25);
+    animation: btnRipple 0.6s ease-out;
+    pointer-events: none;
+}
+
+@keyframes btnRipple {
+    0% { transform: scale(0); opacity: 1; }
+    100% { transform: scale(2); opacity: 0; }
+}
+
+/* ========================================
+   时钟容器
+   ======================================== */
+.clock-container {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 0.75rem 1.25rem;
+    text-align: center;
+    min-width: 130px;
+    backdrop-filter: blur(10px);
+}
+
+.clock-time {
+    font-family: var(--font-code);
+    font-size: 1.3rem;
+    color: var(--neon-blue);
+    letter-spacing: 0.05em;
+}
+
+.clock-date {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    margin-top: 0.15rem;
+}
+
+/* ========================================
+   悬浮按钮
+   ======================================== */
+.floating-btn {
+    position: fixed;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--bg-card);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 100;
+    transition: all var(--transition-base);
+    color: var(--neon-blue);
+    backdrop-filter: blur(10px);
+    font-size: 1.1rem;
+}
+
+.floating-btn:hover {
+    background: var(--neon-blue);
+    color: var(--bg-deep);
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+}
+
+.floating-btn-back {
+    bottom: 2rem;
+    right: 2rem;
+}
+
+.floating-btn-burst {
+    bottom: 7rem;
+    right: 2rem;
+}
+
+/* ========================================
+   搜索区域（首页独立搜索框）
+   ======================================== */
+.home-search-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-full);
+    transition: all var(--transition-base);
+    min-width: 280px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.home-search-wrap:focus-within {
+    border-color: var(--border-glow);
+    box-shadow: var(--glow-blue);
+}
+
+.home-search-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    font-family: var(--font-body);
+}
+
+.home-search-input::placeholder {
+    color: var(--text-muted);
+}
+
+.home-search-icon {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.home-search-shortcut {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    opacity: 0.5;
+    font-family: var(--font-code);
+}
+
+/* ========================================
+   响应式
+   ======================================== */
+@media (max-width: 768px) {
+    .splash-logo {
+        font-size: 2.5rem;
+    }
+
+    .splash-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .home-title {
+        font-size: 2rem;
+    }
+
+    .stats-grid {
+        gap: 0.75rem;
+    }
+
+    .stat-card {
+        padding: 0.75rem 1.25rem;
+        min-width: 80px;
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
+    }
+
+    .cat-btn {
+        padding: 0.4rem 0.9rem;
+        font-size: 0.78rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .splash-logo {
+        font-size: 1.8rem;
+    }
+
+    .home-title {
+        font-size: 1.5rem;
+    }
+
+    .home-search-wrap {
+        min-width: auto;
+        max-width: 100%;
+    }
+
+    .floating-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
+
+    .floating-btn-back {
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
+
+    .floating-btn-burst {
+        bottom: 5.5rem;
+        right: 1.5rem;
+    }
+}
+
+.sort-btn {
+    padding: 0.35rem 0.9rem;
+    border-radius: var(--radius-full);
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border-subtle);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    font-family: var(--font-body);
+}
+.sort-btn:hover {
+    color: var(--text-primary);
+    border-color: rgba(255,255,255,0.2);
+}
+.sort-btn.active {
+    color: #fff;
+    background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+    border-color: transparent;
+    box-shadow: 0 0 15px rgba(0,212,255,0.3);
+}

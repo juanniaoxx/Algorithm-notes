@@ -1,0 +1,170 @@
+/* ========================================
+   CSAPP Study Schedule - CyberDev Theme
+   课程表样式，参考 CS 61A 日历风格
+   ======================================== */
+
+/* 日程表容器 */
+.schedule-wrapper {
+    margin: 2rem 0;
+    overflow-x: auto;
+    border-radius: var(--radius-lg);
+    background: rgba(10, 20, 35, 0.3);
+    backdrop-filter: blur(2px);
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    min-width: 800px;
+}
+
+/* 表头样式 */
+.schedule-table th {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.12), rgba(139, 92, 246, 0.08));
+    padding: 1rem 0.8rem;
+    text-align: center;
+    font-weight: 600;
+    color: var(--neon-blue);
+    border-bottom: 2px solid var(--neon-cyan);
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+/* 表头各列宽度建议 */
+.schedule-table th:first-child { width: 8%; }   /* 周次 */
+.schedule-table th:nth-child(2) { width: 10%; } /* 日期 */
+.schedule-table th:nth-child(3) { width: 25%; } /* 章节 */
+.schedule-table th:nth-child(4) { width: 35%; } /* 内容 */
+.schedule-table th:last-child { width: 22%; }   /* 实验/作业 */
+
+/* 单元格通用样式 */
+.schedule-table td {
+    padding: 0.9rem 0.8rem;
+    border-bottom: 1px solid var(--border-subtle);
+    vertical-align: top;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* 行悬停效果 */
+.schedule-table tr:hover td {
+    background: rgba(0, 212, 255, 0.03);
+    transform: scale(1.001);
+    transition: all 0.2s ease;
+}
+
+/* 周次列 - 突出显示 */
+.schedule-table td:first-child {
+    font-weight: 600;
+    color: var(--neon-purple);
+    text-align: center;
+    background: rgba(139, 92, 246, 0.05);
+    border-right: 1px solid var(--border-subtle);
+}
+
+/* 章节标签风格 */
+.schedule-chap {
+    display: inline-block;
+    background: rgba(0, 212, 255, 0.1);
+    border: 1px solid rgba(0, 212, 255, 0.25);
+    border-radius: var(--radius-sm);
+    padding: 0.2rem 0.5rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--neon-blue);
+    font-family: var(--font-code);
+    margin-bottom: 0.25rem;
+}
+
+/* 核心章节标记 ⭐ */
+.schedule-star {
+    color: var(--neon-amber);
+    font-size: 0.8rem;
+    margin-left: 0.3rem;
+}
+
+/* 实验标记 🧪 */
+.schedule-lab {
+    display: inline-block;
+    background: rgba(255, 179, 71, 0.1);
+    border: 1px dashed var(--neon-amber);
+    border-radius: var(--radius-sm);
+    padding: 0.2rem 0.5rem;
+    font-size: 0.7rem;
+    color: var(--neon-amber);
+    font-family: var(--font-code);
+    white-space: nowrap;
+}
+
+.schedule-lab::before {
+    content: "🧪 ";
+    font-size: 0.7rem;
+}
+
+/* 难度徽章（可选） */
+.schedule-badge {
+    display: inline-block;
+    border-radius: var(--radius-full);
+    padding: 0.15rem 0.5rem;
+    font-size: 0.65rem;
+    font-weight: 500;
+    margin-left: 0.5rem;
+}
+
+.badge-core {
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #f87171;
+}
+
+.badge-hard {
+    background: rgba(139, 92, 246, 0.15);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    color: #c084fc;
+}
+
+/* 周分隔行 - 视觉分组 */
+.schedule-table tr.week-separator td {
+    background: rgba(0, 212, 255, 0.05);
+    border-top: 1px solid var(--border-glow);
+    border-bottom: 1px solid var(--border-glow);
+    padding: 0.5rem 0.8rem;
+}
+
+.week-separator td {
+    font-weight: 600;
+    color: var(--neon-blue);
+    letter-spacing: 1px;
+}
+
+.week-separator td span {
+    margin-right: 1rem;
+}
+
+/* 响应式：小屏幕时表格容器滚动 */
+@media (max-width: 768px) {
+    .schedule-wrapper {
+        border-radius: var(--radius-md);
+    }
+    
+    .schedule-table th,
+    .schedule-table td {
+        padding: 0.6rem 0.5rem;
+        font-size: 0.75rem;
+    }
+}
+
+/* 可选：周次列固定宽度更紧凑 */
+.schedule-table td:first-child,
+.schedule-table th:first-child {
+    white-space: nowrap;
+}
+
+/* 日期列样式 */
+.schedule-table td:nth-child(2) {
+    font-family: var(--font-code);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+}

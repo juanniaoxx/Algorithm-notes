@@ -1,0 +1,275 @@
+/* ========================================
+   CyberDev Theme - Docs Page
+   内页文档专属样式
+   ======================================== */
+
+   /* 内页内容区浮在 Canvas 上方 */
+.md-main,
+.md-container,
+.md-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* ----- 内页整体容器 ----- */
+.page-docs {
+    max-width: 900px;
+}
+
+/* ----- 文档元信息（分类标签、阅读时间等） ----- */
+.doc-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.doc-meta-tag {
+    background: rgba(0, 212, 255, 0.08);
+    color: var(--neon-blue);
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--radius-full);
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.doc-meta-divider {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--text-muted);
+    opacity: 0.4;
+}
+
+/* ----- 上一篇/下一篇导航 ----- */
+.doc-pagination {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.doc-pagination-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: all var(--transition-base);
+    max-width: 45%;
+}
+
+.doc-pagination-link:hover {
+    border-color: var(--border-glow);
+    box-shadow: var(--glow-blue);
+    color: var(--neon-blue);
+}
+
+.doc-pagination-prev {
+    text-align: left;
+}
+
+.doc-pagination-next {
+    text-align: right;
+    margin-left: auto;
+}
+
+.doc-pagination-direction {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.doc-pagination-title {
+    font-weight: 500;
+    color: var(--text-primary);
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.doc-pagination-link:hover .doc-pagination-title {
+    color: var(--neon-blue);
+}
+
+/* ----- Markdown 内容增强 ----- */
+
+/* 首段加大字号 */
+.md-content > p:first-of-type {
+    font-size: 1.05rem;
+    color: var(--text-primary);
+}
+
+/* 代码块标题增强 */
+.md-content .highlight .filename {
+    font-family: var(--font-code);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+/* 图片暗色适配 */
+.md-content img {
+    border-radius: var(--radius-sm);
+    box-shadow: var(--card-shadow);
+}
+
+/* 图片悬停放大 */
+.md-content img:hover {
+    transform: scale(1.01);
+    box-shadow: var(--card-hover-shadow);
+}
+
+/* 图片暗色模式亮度调整 */
+[data-md-color-scheme="slate"] .md-content img {
+    filter: brightness(0.9);
+}
+
+/* Mermaid 图表 */
+.md-content .mermaid {
+    text-align: center;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+}
+
+/* 定义列表 */
+.md-typeset dl {
+    margin: 1rem 0;
+}
+
+.md-typeset dt {
+    font-weight: 600;
+    color: var(--neon-blue);
+    margin-top: 0.75rem;
+}
+
+.md-typeset dd {
+    margin-left: 1.5rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* 上标/下标 */
+.md-typeset sup,
+.md-typeset sub {
+    font-size: 0.75em;
+    color: var(--neon-purple);
+}
+
+/* 标记文本 ==高亮== */
+.md-typeset mark {
+    background: rgba(255, 179, 71, 0.2);
+    color: var(--neon-amber);
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+}
+
+/* 键盘按键 */
+.md-typeset kbd {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border-subtle);
+    border-bottom-width: 2px;
+    border-radius: 4px;
+    padding: 0.15em 0.4em;
+    font-family: var(--font-code);
+    font-size: 0.85em;
+    color: var(--text-secondary);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* 缩写 */
+.md-typeset abbr {
+    border-bottom: 1px dotted var(--text-muted);
+    cursor: help;
+    text-decoration: none;
+}
+
+/* 脚注区域 */
+.md-typeset .footnote {
+    border-top: 1px solid var(--border-subtle);
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+}
+
+.md-typeset .footnote ol {
+    padding-left: 1.5rem;
+}
+
+.md-typeset .footnote li {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.md-typeset .footnote li:target {
+    background: rgba(0, 212, 255, 0.08);
+    border-radius: var(--radius-sm);
+    padding: 0.25rem 0.5rem;
+    margin: 0 -0.5rem;
+}
+
+/* 页内跳转高亮 */
+:target {
+    animation: targetHighlight 2s ease-out;
+}
+
+@keyframes targetHighlight {
+    0% {
+        background: rgba(0, 212, 255, 0.15);
+        box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.3);
+    }
+    50% {
+        background: rgba(0, 212, 255, 0.08);
+        box-shadow: 0 0 0 8px rgba(0, 212, 255, 0);
+    }
+    100% {
+        background: transparent;
+        box-shadow: none;
+    }
+}
+
+/* ========================================
+   响应式
+   ======================================== */
+@media (max-width: 768px) {
+    .doc-pagination {
+        flex-direction: column;
+    }
+
+    .doc-pagination-link {
+        max-width: 100%;
+    }
+
+    .doc-pagination-next {
+        margin-left: 0;
+    }
+}
+
+.md-content img {
+    display: block;
+    margin: 0 auto;
+}
+
+[data-md-color-scheme="slate"] .md-content img {
+    filter: invert(0.88) hue-rotate(180deg);
+}
+
+/* 对带颜色的图片排除 */
+[data-md-color-scheme="slate"] .md-content img.no-invert {
+    filter: none;
+}

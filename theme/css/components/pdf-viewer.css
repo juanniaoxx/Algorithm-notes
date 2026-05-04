@@ -1,0 +1,135 @@
+/* ========================================
+   CyberDev Theme - PDF Viewer
+   ======================================== */
+
+.pdf-viewer-container {
+    display: none;
+    margin: 1.5rem 0;
+    padding: 0;
+    background: transparent;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    text-align: center;
+    transition: border-color var(--transition-base);
+}
+
+.pdf-viewer-container:hover {
+    border-color: var(--border-glow);
+}
+
+.pdf-viewer-container.show {
+    display: block;
+    animation: pdfReveal 0.3s ease;
+}
+
+@keyframes pdfReveal {
+    from { opacity: 0; transform: translateY(-5px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ----- 控制栏 ----- */
+.pdf-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 0.6rem 1rem;
+    background: rgba(0, 212, 255, 0.04);
+    border-bottom: 1px solid var(--border-subtle);
+    flex-wrap: wrap;
+}
+
+.pdf-controls button {
+    padding: 0.35rem 1rem;
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    font-size: 0.78rem;
+    font-family: var(--font-body);
+    transition: all var(--transition-fast);
+}
+
+.pdf-controls button:hover:not(:disabled) {
+    background: rgba(0, 212, 255, 0.1);
+    color: var(--neon-blue);
+    border-color: var(--border-glow);
+    box-shadow: var(--glow-blue);
+}
+
+.pdf-controls button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.pdf-controls .pdf-close:hover:not(:disabled) {
+    background: rgba(255, 45, 149, 0.15);
+    color: var(--neon-pink);
+    border-color: var(--neon-pink);
+    box-shadow: 0 0 12px rgba(255, 45, 149, 0.3);
+}
+
+.pdf-page-info {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-family: var(--font-code);
+    background: rgba(255, 255, 255, 0.03);
+    padding: 0.25rem 0.8rem;
+    border-radius: var(--radius-full);
+}
+
+.pdf-page-info span {
+    color: var(--neon-blue);
+    font-weight: 600;
+}
+
+/* ----- Canvas ----- */
+.pdf-viewer-container canvas {
+    display: block;
+    margin: 1rem auto;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
+    background: #fff;
+    border-radius: 4px;
+    max-width: 100%;
+    height: auto !important;
+}
+
+/* ----- 加载 ----- */
+.pdf-loading {
+    text-align: center;
+    padding: 1.5rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-family: var(--font-body);
+}
+
+.pdf-loading::before {
+    content: "📖";
+    margin-right: 0.5rem;
+    animation: pdfPageFlip 1s ease infinite;
+    display: inline-block;
+}
+
+@keyframes pdfPageFlip {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(10deg); }
+}
+
+/* ----- 错误 ----- */
+.pdf-error {
+    text-align: center;
+    padding: 1rem;
+    color: var(--neon-pink);
+    background: rgba(255, 45, 149, 0.05);
+    border-left: 3px solid var(--neon-pink);
+    font-size: 0.8rem;
+    margin: 0.5rem 0;
+}
+
+@media (max-width: 768px) {
+    .pdf-controls { gap: 6px; }
+    .pdf-controls button { padding: 0.3rem 0.75rem; font-size: 0.7rem; }
+    .pdf-page-info { font-size: 0.7rem; }
+}

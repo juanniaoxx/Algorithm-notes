@@ -1,0 +1,77 @@
+/* ========================================
+   CyberDev Theme - CSS Variables
+   霓虹赛博朋克风格 · 代码学习文档
+   ======================================== */
+
+:root {
+    /* ===== 背景系统 ===== */
+    --bg-deep: #06060f;                    /* 最深背景（Canvas 底色） */
+    --bg-primary: #0c0c1d;                 /* 主背景 */
+    --bg-card: rgba(18, 18, 42, 0.7);      /* 卡片 / 面板背景 */
+    --bg-elevated: rgba(26, 26, 58, 0.5);  /* 悬浮层背景 */
+    --bg-glass: rgba(14, 14, 32, 0.75);    /* 玻璃拟态背景 */
+
+    /* ===== 霓虹主色 ===== */
+    --neon-blue: #00d4ff;                  /* 主强调色：链接、高亮 */
+    --neon-purple: #b347ea;                /* 辅强调色：标题、装饰 */
+    --neon-green: #00ff88;                 /* 成功 / 代码正确 */
+    --neon-pink: #ff2d95;                  /* 警告 / 错误 */
+    --neon-amber: #ffb347;                 /* 提示 / 装饰 */
+    --neon-cyan: #00e5ff;                  /* 悬停亮色 */
+
+    /* ===== 文字系统 ===== */
+    --text-primary: #e2e2f0;               /* 正文主色 */
+    --text-secondary: #9898c0;             /* 次要文字 */
+    --text-muted: #606090;                 /* 弱化文字 */
+
+    /* ===== 代码区 ===== */
+    --code-bg: rgba(8, 8, 24, 0.92);       /* 代码块背景 */
+    --code-border: rgba(0, 212, 255, 0.15);/* 代码块边框 */
+    --code-text: #e2e2f0;                  /* 代码文字 */
+    --code-keyword: #c792ea;               /* 关键字 */
+    --code-string: #c3e88d;                /* 字符串 */
+    --code-comment: #546e7a;              /* 注释 */
+    --code-function: #82aaff;              /* 函数名 */
+    --code-number: #f78c6c;                /* 数字 */
+    --code-type: #ffcb6b;                  /* 类型 */
+    --code-operator: #89ddff;              /* 运算符 */
+
+    /* ===== 边框与分割线 ===== */
+    --border-subtle: rgba(255, 255, 255, 0.06);   /* 微妙边框 */
+    --border-glow: rgba(0, 212, 255, 0.25);       /* 发光边框 */
+
+    /* ===== 阴影 ===== */
+    --glow-blue: 0 0 20px rgba(0, 212, 255, 0.25);
+    --glow-purple: 0 0 20px rgba(179, 71, 234, 0.25);
+    --glow-green: 0 0 15px rgba(0, 255, 136, 0.2);
+    --glow-pink: 0 0 15px rgba(255, 45, 149, 0.2);
+    --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    --card-hover-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 212, 255, 0.1);
+
+    /* ===== 圆角系统 ===== */
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-full: 9999px;
+
+    /* ===== 间距系统 ===== */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+
+    /* ===== 字体系统 ===== */
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    --font-code: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
+    --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+
+    /* ===== 导航栏 ===== */
+    --header-height: 64px;
+
+    /* ===== 过渡 ===== */
+    --transition-fast: 0.15s ease;
+    --transition-base: 0.25s ease;
+    --transition-slow: 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}

@@ -1,0 +1,87 @@
+/* ========================================
+   CyberDev Theme - Footer
+   页脚样式
+   ======================================== */
+
+/* ----- 页脚容器 ----- */
+.md-footer {
+    background: transparent;
+    color: var(--text-muted);
+}
+
+/* ----- 页脚导航（上一页/下一页） ----- */
+.md-footer-nav {
+    background: rgba(255, 255, 255, 0.02);
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 0.75rem 0;
+}
+
+.md-footer-nav__link {
+    color: var(--text-secondary);
+    transition: color var(--transition-fast);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+}
+
+.md-footer-nav__link:hover {
+    color: var(--neon-blue);
+    background: rgba(0, 212, 255, 0.05);
+}
+
+.md-footer-nav__direction {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.md-footer-nav__title {
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* ----- 页脚元信息 ----- */
+.md-footer-meta {
+    background: rgba(0, 0, 0, 0.3);
+    border-top: 1px solid var(--border-subtle);
+}
+
+.md-footer-copyright {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    padding: 1rem 0;
+}
+
+.md-footer-copyright a {
+    color: var(--neon-blue);
+    border-bottom: 1px dashed rgba(0, 212, 255, 0.3);
+}
+
+.md-footer-copyright a:hover {
+    color: var(--neon-cyan);
+    border-bottom-color: var(--neon-cyan);
+}
+
+/* ----- 页脚社交图标 ----- */
+.md-footer-social {
+    padding: 0.75rem 0;
+}
+
+.md-footer-social__link {
+    color: var(--text-muted);
+    transition: all var(--transition-fast);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0.25rem;
+}
+
+.md-footer-social__link:hover {
+    color: var(--neon-blue);
+    background: rgba(0, 212, 255, 0.08);
+    box-shadow: var(--glow-blue);
+}

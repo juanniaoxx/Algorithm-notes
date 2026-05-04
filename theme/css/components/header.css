@@ -1,0 +1,271 @@
+/* ========================================
+   CyberDev Theme - Header / Navigation
+   玻璃拟态导航栏 · 搜索框 · 主题切换
+   ======================================== */
+/* ----- 强制导航栏固定并覆盖 Material 默认行为 ----- */
+.md-header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+    background: var(--bg-glass) !important;
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid var(--border-subtle);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    height: var(--header-height);
+}
+
+/* 给 body 加顶部 padding，防止内容被导航栏遮挡 */
+.md-main {
+    padding-top: var(--header-height);
+}
+
+/* 确保移动端也固定 */
+@media (max-width: 768px) {
+    .md-header {
+        position: fixed !important;
+        top: 0 !important;
+    }
+    .md-main {
+        padding-top: 56px; /* 移动端导航栏稍矮 */
+    }
+}
+
+/* ----- MkDocs Material 导航栏覆盖 ----- */
+.md-header {
+    background: var(--bg-glass) !important;
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid var(--border-subtle);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    height: var(--header-height);
+    z-index: 1000;
+}
+
+/* 导航栏内部容器 */
+.md-header__inner {
+    height: var(--header-height);
+    padding: 0 1.5rem;
+}
+
+/* ----- Logo / 站点名称 ----- */
+.md-header__topic,
+.md-header__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.3rem;
+    letter-spacing: -0.02em;
+    color: var(--text-primary) !important;
+}
+
+.md-header__topic .md-ellipsis {
+    color: var(--text-primary) !important;
+}
+
+/* Logo 图标包装 */
+.md-header__button.md-logo {
+    margin: 0;
+    padding: 0.25rem;
+}
+
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    transition: box-shadow var(--transition-base);
+}
+
+.md-header__button.md-logo:hover img,
+.md-header__button.md-logo:hover svg {
+    box-shadow: var(--glow-blue);
+}
+
+/* ----- 顶部导航选项卡 ----- */
+.md-tabs {
+    background: rgba(14, 14, 32, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.md-tabs__link {
+    color: var(--text-secondary) !important;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: color var(--transition-base);
+    position: relative;
+}
+
+.md-tabs__link:hover {
+    color: var(--text-primary) !important;
+}
+
+.md-tabs__link--active {
+    color: var(--neon-blue) !important;
+}
+
+/* 选中态下划线 */
+.md-tabs__link--active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 2px;
+    background: var(--neon-blue);
+    border-radius: 2px;
+    box-shadow: 0 0 10px var(--neon-blue);
+}
+
+/* ----- 搜索框 ----- */
+.md-search__form {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-full);
+    transition: all var(--transition-base);
+}
+
+.md-search__form:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: var(--border-glow);
+    box-shadow: var(--glow-blue);
+}
+
+.md-search__input {
+    color: var(--text-primary) !important;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+}
+
+.md-search__input::placeholder {
+    color: var(--text-muted) !important;
+}
+
+.md-search__icon {
+    color: var(--text-muted);
+}
+
+/* 搜索弹窗 */
+.md-search__overlay {
+    background: rgba(6, 6, 15, 0.8);
+    backdrop-filter: blur(8px);
+}
+
+.md-search__output {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    box-shadow: var(--card-shadow);
+}
+
+.md-search-result__link {
+    transition: background var(--transition-fast);
+}
+
+.md-search-result__link:hover {
+    background: rgba(0, 212, 255, 0.06);
+}
+
+.md-search-result__link[data-selected] {
+    background: rgba(0, 212, 255, 0.1);
+}
+
+/* 搜索高亮 */
+.md-search-result__highlight {
+    color: var(--neon-blue);
+    text-shadow: 0 0 8px rgba(0, 212, 255, 0.3);
+}
+
+/* ----- 主题切换按钮 ----- */
+.md-header__button.md-icon .md-icon {
+    color: var(--text-secondary);
+    transition: all var(--transition-base);
+}
+
+.md-header__button.md-icon:hover .md-icon {
+    color: var(--neon-amber);
+    filter: drop-shadow(0 0 6px rgba(255, 179, 71, 0.4));
+}
+
+/* ----- 仓库按钮 ----- */
+.md-header__source {
+    color: var(--text-secondary);
+    transition: color var(--transition-base);
+}
+
+.md-header__source:hover {
+    color: var(--neon-blue);
+}
+
+/* ----- 移动端菜单按钮 ----- */
+.md-header .md-header__button {
+    color: var(--text-secondary) !important;
+    transition: color var(--transition-base);
+}
+
+.md-header .md-header__button:hover {
+    color: var(--neon-blue) !important;
+}
+
+/* ----- 移动端抽屉导航 ----- */
+.md-nav--primary .md-nav__title {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-display);
+    font-weight: 600;
+}
+
+.md-nav--primary .md-nav__link {
+    color: var(--text-secondary);
+    transition: all var(--transition-fast);
+}
+
+.md-nav--primary .md-nav__link:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.md-nav--primary .md-nav__link--active {
+    color: var(--neon-blue);
+    background: rgba(0, 212, 255, 0.08);
+    border-left: 3px solid var(--neon-blue);
+}
+
+/* ----- 滚动时导航栏阴影增强 ----- */
+.md-header[data-md-state="shadow"] {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ----- 响应式 ----- */
+@media (max-width: 768px) {
+    .md-header__inner {
+        padding: 0 0.75rem;
+    }
+
+    .md-header__topic,
+    .md-header__title {
+        font-size: 1.1rem;
+    }
+
+    .md-search__form {
+        min-width: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .md-header__topic,
+    .md-header__title {
+        font-size: 1rem;
+    }
+
+    .md-search__form {
+        min-width: 140px;
+        padding: 0.3rem 0.75rem;
+    }
+}
