@@ -1,7 +1,31 @@
 (function () {
     'use strict';
-
-    var basePath = 'theme/js/';
+    // ========================================
+    // 自动检测基础路径（从当前脚本的 URL 反推）
+    // ========================================
+    function getBasePath() {
+        // 获取当前正在执行的脚本的 URL
+        var scripts = document.getElementsByTagName('script');
+        var currentScript = scripts[scripts.length - 1];
+        var src = currentScript.src;
+        
+        // 从脚本 URL 中提取路径
+        // 例如：https://juanniaoxx.github.io/Algorithm-notes/theme/js/main.js
+        // 提取出：/Algorithm-notes/theme/js/
+        var match = src.match(/^(https?:)?\/\/[^\/]+(.*?)\/theme\/js\/main\.js/);
+        if (match && match[2]) {
+            return match[2] + '/theme/js/';
+        }
+        
+        // 降级：本地预览
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+            return '/theme/js/';
+        }
+        
+        // 最终降级
+        return '/theme/js/';
+    }
+    var basePath = '/theme/js/';
 
     var commonModules = [
         'core/background.js',
