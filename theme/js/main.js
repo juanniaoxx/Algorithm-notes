@@ -25,7 +25,7 @@
         // 最终降级
         return '/theme/js/';
     }
-    var basePath = '/theme/js/';
+    var basePath = getBasePath();
 
     var commonModules = [
         'core/background.js',
