@@ -646,6 +646,10 @@ title: "Computer System: A Programmer's Perspective"
         <span class="collapsible-toggle"><span>收起</span><span class="toggle-icon">▼</span></span>
     </div>
     <div class="collapsible-content">
+        <a href="../csapp/Lab/0-配置环境" class="collapsible-item">
+            <span><span class="item-icon">🧪</span>实验相关配置与备注</span>
+            <span class="item-badge item-badge-incomplete">❌ 🔒</span>
+        </a>
         <a href="#" class="collapsible-item">
             <span><span class="item-icon">🧪</span>Lab1: DataLab 位运算实验</span>
             <span class="item-badge item-badge-incomplete">❌ 🔒</span>

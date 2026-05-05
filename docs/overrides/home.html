@@ -199,7 +199,7 @@
         style="background:var(--bg-glass); backdrop-filter:blur(20px); border-bottom:1px solid var(--border-subtle); position:sticky; top:0; z-index:1000;">
         <nav class="md-header__inner md-grid"
             style="display:flex; align-items:center; justify-content:space-between; padding:0 1.5rem; height:64px; max-width:1400px; margin:0 auto;">
-            <a href="/"
+            <a href="{{ base_url }}/"
                 style="display:flex; align-items:center; gap:0.5rem; text-decoration:none; color:var(--text-primary); font-family:var(--font-display); font-weight:700; font-size:1.2rem;">
                 <span
                     style="background:linear-gradient(135deg, var(--neon-blue), var(--neon-purple)); color:#fff; width:32px; height:32px; border-radius:8px; display:inline-flex; align-items:center; justify-content:center; font-size:0.8rem;">&lt;/&gt;</span>
@@ -315,8 +315,9 @@
     </button>
 
     <!-- 主题 JS -->
-    <script src="theme/js/main.js"></script>
-    <script src="theme/js/video-player.js"></script>
+    <script src="{{ base_url }}/theme/js/main.js"></script>
+    <script src="{{ base_url }}/theme/js/video-player.js"></script>
+    <script>window.baseUrl = "{{ base_url }}" || "";</script>
 
     <!-- 开屏逻辑 -->
     <script>

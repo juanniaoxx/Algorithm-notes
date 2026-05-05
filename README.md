@@ -1,11 +1,15 @@
 # Weary Bird's Algorithm Notes
 
 [Weary Bird's Algorithm Notes](https://juanniaoxx.github.io/Algorithm-notes/)
-学习算法的笔记,
-在硬计算部分
-主要包括Acwing基础课,提高课,leetcode究极班内容以及左程云算法课
-顺便记录参加的leetcode周赛,cf比赛的总结与反思
 
-在软计算方法
-包括手写机器学习算法等内容
+不过目前网站有如下 Bug 
+
+-[ ] 按图标返回的目的地址是 `juanniao.github.io` 而不是该项目对应的 `juanniaoxx.github.io/Algorithm-notes/`
+-[ ] 主页大部分功能丢失，怀疑是.js 的相对路径配置问题 
+
+
 ## 施工中🚧
+
+- [ ] CSAPP chapter 2 
+- [ ] A tour of C++ chapter 1 & chapter 2
+- [ ] CS61A 

@@ -48,7 +48,7 @@
                 <div class="tech-card-inner">
                     <div class="tech-card-front">
                         ${t.img 
-                            ? `<img src="${t.img}" alt="${t.title}" class="tech-card-img">
+                            ? `<img src="${window.baseUrl || ''}${t.img}" alt="${t.title}" class="tech-card-img">
                                <div class="tech-card-img-label"><span>${t.title}</span></div>`
                             : `<div class="tech-card-placeholder">
                                    <span class="tech-icon-wrap" style="background:${t.iconBg};"><span>${t.icon}</span></span>
@@ -64,7 +64,7 @@
                         <span class="tech-difficulty ${difficultyMap[t.difficulty]?.class || ''}">${difficultyMap[t.difficulty]?.label || t.difficulty}</span>
                         <div class="tech-card-stars">${renderStars(t.stars)}</div>
                         <p class="tech-card-intro">${t.intro}</p>
-                        <a href="${t.link}" class="tech-card-link">进入 →</a>
+                        <a href="${window.baseUrl || ''}${t.link}" class="tech-card-link">进入 →</a>
                     </div>
                 </div>
             </div>
@@ -198,10 +198,11 @@
     }
 
     function loadTopicsData() {
-        return fetch('theme/js/data/topics.json').then(r => r.json()).then(d => { topicsData = d; return d; }).catch(() => { console.warn('JSON 加载失败'); return []; });
+        var base = window.baseUrl || "";
+        return fetch(base + '/theme/js/data/topics.json').then(r => r.json()).then(d => { topicsData = d; return d; }).catch(() => { console.warn('JSON 加载失败'); return []; });
     }
 
-    function init() {
+    function init() { 
         loadTopicsData().then(data => {
             updateCategoryStats();
             applyFiltersAndSort();
