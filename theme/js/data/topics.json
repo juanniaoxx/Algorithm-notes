@@ -1,5 +1,94 @@
 [
     {
+        "cate": "cs-diy",
+        "title": "CS61A: Python/SICP",
+        "icon": "🐍",
+        "iconBg": "rgba(0,212,255,0.15)",
+        "desc": "Berkeley · 编程入门",
+        "intro": "用 Python 学 SICP 核心思想：高阶函数、递归、数据抽象、解释器，配套自动评分作业。",
+        "difficulty": "beginner",
+        "books": 1,
+        "link": "/cs-diy/cs61a/",
+        "stars": 5,
+        "img": "/theme/images/5.png"
+    },
+    {
+        "cate": "cs-diy",
+        "title": "CS61B: 数据结构",
+        "icon": "🌲",
+        "iconBg": "rgba(0,212,255,0.15)",
+        "desc": "Berkeley · 数据结构",
+        "intro": "用 Java 实现数组、树、哈希表、图算法，配合 Hug 神级板书，完成 Git 和体感游戏项目。",
+        "difficulty": "beginner",
+        "books": 1,
+        "link": "/cs-diy/cs61b/",
+        "stars": 5,
+        "img": "/theme/images/6.png"
+    },
+    {
+        "cate": "cs-diy",
+        "title": "CS61C: 计算机体系结构",
+        "icon": "🌲",
+        "iconBg": "rgba(0,212,255,0.15)",
+        "desc": "Berkeley · 体系结构",
+        "intro": "从 C 到 RISC-V 汇编，理解 CPU、流水线、缓存与并行，动手写一颗处理器。",
+        "difficulty": "beginner",
+        "books": 1,
+        "link": "/cs-diy/cs61b/",
+        "stars": 5,
+        "img": "/theme/images/7.png"
+    },
+    {
+        "cate": "languages",
+        "title": "The C Programming Language",
+        "icon": "📖",
+        "iconBg": "rgba(0,180,255,0.15)",
+        "desc": "C 语言 · 圣经",
+        "intro": "K&R C 语言圣经，所有 C 程序员必读的经典之作。",
+        "difficulty": "intermediate",
+        "books": 1,
+        "link": "/languages/c/tcpl/",
+        "stars": 5
+    },
+    {
+        "cate": "systems",
+        "title": "CSAPP",
+        "icon": "📖",
+        "iconBg": "rgba(0,255,136,0.15)",
+        "desc": "体系结构 · 经典",
+        "intro": "深入理解计算机系统，从位运算到虚存，打通软硬件壁垒。",
+        "difficulty": "beginner",
+        "books": 1,
+        "link": "/systems/csapp/",
+        "img": "/theme/images/CSAPP.png",
+        "stars": 5
+    },
+    {
+        "cate": "languages",
+        "title": "21st Century C",
+        "icon": "📖",
+        "iconBg": "rgba(0,180,255,0.15)",
+        "desc": "C 语言 · 现代实践",
+        "intro": "用现代工具链和 C11 标准编写 C 程序，告别 K&R 时代的过时做法。",
+        "difficulty": "intermediate",
+        "books": 1,
+        "link": "/languages/c/21st-century/",
+        "stars": 4
+    },
+    {
+        "cate": "cs-diy",
+        "title": "CS70: 离散数学与概率",
+        "icon": "🎲",
+        "iconBg": "rgba(179,71,234,0.15)",
+        "desc": "Berkeley · 离散数学",
+        "intro": "计数、图论、概率、多项式，CS 的数学基石。",
+        "difficulty": "beginner",
+        "books": 1,
+        "link": "/cs-diy/cs70/",
+        "stars": 5,
+        "img": "/theme/images/8.png"
+    },
+    {
         "cate": "languages",
         "title": "Introducing C++: The Easy Way to Start Learning Modern C++",
         "icon": "📖",
@@ -24,6 +113,18 @@
         "link": "/languages/cpp/tour/",
         "stars": 4,
         "img": "/theme/images/A_tour_C++.png"
+    },
+    {
+        "cate": "systems",
+        "title": "NJU PA - 2025",
+        "icon": "🏆 ",
+        "iconBg": "rgba(0,180,255,0.15)",
+        "desc": "NJU Programming Assignment",
+        "intro": "理解[程序如何在计算机上运行]的根本途径是从[零]开始实现一个完整的计算机系统.",
+        "difficulty": "intermediate",
+        "books": 1,
+        "link": "/project/nju_pa/",
+        "stars": 5
     },
     {
         "cate": "languages",
@@ -99,19 +200,6 @@
         "stars": 4
     },
     {
-        "cate": "systems",
-        "title": "CSAPP",
-        "icon": "📖",
-        "iconBg": "rgba(0,255,136,0.15)",
-        "desc": "体系结构 · 经典",
-        "intro": "深入理解计算机系统，从位运算到虚存，打通软硬件壁垒。",
-        "difficulty": "beginner",
-        "books": 1,
-        "link": "/systems/csapp/",
-        "img": "/theme/images/CSAPP.png",
-        "stars": 5
-    },
-    {
         "cate": "tools",
         "title": "K&S 入门",
         "icon": "📖",
@@ -174,80 +262,15 @@
         "img": "/theme/images/3.png"
     },
     {
-        "cate": "cs-diy",
-        "title": "CS61A: Python/SICP",
-        "icon": "🐍",
-        "iconBg": "rgba(0,212,255,0.15)",
-        "desc": "Berkeley · 编程入门",
-        "intro": "用 Python 学 SICP 核心思想：高阶函数、递归、数据抽象、解释器，配套自动评分作业。",
+        "cate": "blog",
+        "title": "Vscode 配置｜快捷键",
+        "icon": "🍮",
+        "iconBg": "rgba(255,179,71,0.15)",
+        "desc": "善用工具",
+        "intro": "vscode 客制化",
         "difficulty": "beginner",
         "books": 1,
-        "link": "/cs-diy/cs61a/",
-        "stars": 5,
-        "img": "/theme/images/5.png"
-    },
-    {
-        "cate": "cs-diy",
-        "title": "CS61B: 数据结构",
-        "icon": "🌲",
-        "iconBg": "rgba(0,212,255,0.15)",
-        "desc": "Berkeley · 数据结构",
-        "intro": "用 Java 实现数组、树、哈希表、图算法，配合 Hug 神级板书，完成 Git 和体感游戏项目。",
-        "difficulty": "beginner",
-        "books": 1,
-        "link": "/cs-diy/cs61b/",
-        "stars": 5,
-        "img": "/theme/images/6.png"
-    },
-    {
-        "cate": "cs-diy",
-        "title": "CS61C: 计算机体系结构",
-        "icon": "🌲",
-        "iconBg": "rgba(0,212,255,0.15)",
-        "desc": "Berkeley · 体系结构",
-        "intro": "从 C 到 RISC-V 汇编，理解 CPU、流水线、缓存与并行，动手写一颗处理器。",
-        "difficulty": "beginner",
-        "books": 1,
-        "link": "/cs-diy/cs61b/",
-        "stars": 5,
-        "img": "/theme/images/7.png"
-    },
-    {
-        "cate": "cs-diy",
-        "title": "CS70: 离散数学与概率",
-        "icon": "🎲",
-        "iconBg": "rgba(179,71,234,0.15)",
-        "desc": "Berkeley · 离散数学",
-        "intro": "计数、图论、概率、多项式，CS 的数学基石。",
-        "difficulty": "beginner",
-        "books": 1,
-        "link": "/cs-diy/cs70/",
-        "stars": 5,
-        "img": "/theme/images/8.png"
-    },
-    {
-        "cate": "cs-diy",
-        "title": "CMU 15-213",
-        "icon": "💾",
-        "iconBg": "rgba(0,255,136,0.15)",
-        "desc": "CMU · 计算机体系",
-        "intro": "CMU 大一入门系统课，从比特、汇编到内存、链接、异常流，用 C 完成 Malloc 和代理服务器。",
-        "difficulty": "beginner",
-        "books": 1,
-        "link": "/cs-diy/csapp/",
-        "stars": 5,
-        "img": "/theme/images/9.png"
-    },
-    {
-        "cate": "cs-diy",
-        "title": "CS144: 计算机网络",
-        "icon": "🌐",
-        "iconBg": "rgba(0,212,255,0.15)",
-        "desc": "Stanford · 计算机网络",
-        "intro": "用 C++ 实现完整 TCP 协议栈。",
-        "difficulty": "beginner",
-        "books": 1,
-        "link": "/cs-diy/cs144/",
+        "link": "/blog/vscode",
         "stars": 5
     },
     {
@@ -578,18 +601,6 @@
     },
     {
         "cate": "languages",
-        "title": "21st Century C",
-        "icon": "📖",
-        "iconBg": "rgba(0,180,255,0.15)",
-        "desc": "C 语言 · 现代实践",
-        "intro": "用现代工具链和 C11 标准编写 C 程序，告别 K&R 时代的过时做法。",
-        "difficulty": "intermediate",
-        "books": 1,
-        "link": "/languages/c/21st-century/",
-        "stars": 4
-    },
-    {
-        "cate": "languages",
         "title": "C: A Reference Manual",
         "icon": "📖",
         "iconBg": "rgba(0,180,255,0.15)",
@@ -611,18 +622,6 @@
         "books": 1,
         "link": "/languages/c/traps/",
         "stars": 4
-    },
-    {
-        "cate": "languages",
-        "title": "The C Programming Language",
-        "icon": "📖",
-        "iconBg": "rgba(0,180,255,0.15)",
-        "desc": "C 语言 · 圣经",
-        "intro": "K&R C 语言圣经，所有 C 程序员必读的经典之作。",
-        "difficulty": "intermediate",
-        "books": 1,
-        "link": "/languages/c/tcpl/",
-        "stars": 5
     },
     {
         "cate": "languages",
@@ -1150,6 +1149,18 @@
         "difficulty": "intermediate",
         "books": 1,
         "link": "/cs-diy/cs162/",
+        "stars": 5
+    },
+    {
+        "cate": "cs-diy",
+        "title": "NJU: 操作系统",
+        "icon": "⚙️",
+        "iconBg": "rgba(0,200,200,0.15)",
+        "desc": "NJU · 操作系统",
+        "intro": "体系结构 + 扎实的 C 语言功底",
+        "difficulty": "intermediate",
+        "books": 1,
+        "link": "/cs-diy/nju-os/",
         "stars": 5
     },
     {

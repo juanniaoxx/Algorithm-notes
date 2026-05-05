@@ -38,7 +38,8 @@
 
     function isHomePage() {
         var path = window.location.pathname;
-        return path === '/' || path === '' || path.endsWith('/index.html');
+        var pathname = path.endsWith('/') ? path.slice(0, -1) : path;
+        return path === '/' || path === '' || path.endsWith('/index.html') || pathname.endsWith('/Algorithm-notes') || path === '/Algorithm-notes' || path === '/Algorithm-notes/';
     }
 
     function isDocsPage() {
