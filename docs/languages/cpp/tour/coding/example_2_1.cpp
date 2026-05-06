@@ -1,3 +1,6 @@
+/*
+    结构体(structures) 的基本演示
+*/
 #include <iostream>
 
 struct Vector

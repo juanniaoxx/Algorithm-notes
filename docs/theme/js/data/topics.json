@@ -64,6 +64,19 @@
         "stars": 5
     },
     {
+        "cate": "systems",
+        "title": "程序员的自我修养",
+        "icon": "📖",
+        "iconBg": "rgba(0,255,136,0.15)",
+        "desc": "体系结构 · 链接",
+        "intro": "链接、装载与库的底层原理，理解 ELF 和动态库的运作。",
+        "difficulty": "intermediate",
+        "books": 1,
+        "link": "/systems/link-load/",
+        "stars": 4,
+        "img": "/theme/images/link-load.png"
+    },
+    {
         "cate": "languages",
         "title": "21st Century C",
         "icon": "📖",
@@ -124,7 +137,8 @@
         "difficulty": "intermediate",
         "books": 1,
         "link": "/project/nju_pa/",
-        "stars": 5
+        "stars": 5,
+        "img": "/theme/images/nju-pa.png"
     },
     {
         "cate": "languages",
@@ -271,6 +285,18 @@
         "difficulty": "beginner",
         "books": 1,
         "link": "/blog/vscode",
+        "stars": 5
+    },
+    {
+        "cate": "blog",
+        "title": "How to Succeed in Your First Programming Course",
+        "icon": "🍮",
+        "iconBg": "rgba(255,179,71,0.15)",
+        "desc": "How to Succeed in Your First Programming Course",
+        "intro": "How to Succeed in Your First Programming Course",
+        "difficulty": "beginner",
+        "books": 1,
+        "link": "/blog/HSYFPC",
         "stars": 5
     },
     {
@@ -2054,18 +2080,6 @@
         "books": 1,
         "link": "/math/info-theory/",
         "stars": 4
-    },
-    {
-        "cate": "systems",
-        "title": "程序员的自我修养",
-        "icon": "📖",
-        "iconBg": "rgba(0,255,136,0.15)",
-        "desc": "体系结构 · 链接",
-        "intro": "链接、装载与库的底层原理，理解 ELF 和动态库的运作。",
-        "difficulty": "advanced",
-        "books": 1,
-        "link": "/systems/link-load/",
-        "stars": 5
     },
     {
         "cate": "systems",

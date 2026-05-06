@@ -681,6 +681,17 @@ title: "Computer System: A Programmer's Perspective"
     </div>
 </div>
 
+<div class="collapsible">
+    <div class="collapsible-header">
+        <strong><span class="collapsible-icon">📒</span>CSAPP 课后 Homework<span class="collapsible-count">(7)</span></strong>
+        <span class="collapsible-toggle"><span>收起</span><span class="toggle-icon">▼</span></span>
+    </div>
+    <div class="collapsible-content">
+        <a href="../csapp/Homework/chapter_2" class="collapsible-item">
+            <span><span class="item-icon">🧪</span>第二章课后习题</span>
+            <span class="item-badge item-badge-incomplete">❌</span>
+        </a>
+</div>
 
 
 

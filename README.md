@@ -4,8 +4,8 @@
 
 不过目前网站有如下 Bug 
 
--[ ] 按图标返回的目的地址是 `juanniao.github.io` 而不是该项目对应的 `juanniaoxx.github.io/Algorithm-notes/`
--[ ] 主页大部分功能丢失，怀疑是.js 的相对路径配置问题 
+-[x] 按图标返回的目的地址是 `juanniao.github.io` 而不是该项目对应的 `juanniaoxx.github.io/Algorithm-notes/`
+-[x] 主页大部分功能丢失，怀疑是.js 的相对路径配置问题 
 
 
 ## 施工中🚧
